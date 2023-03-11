@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #ddd;
+}
+
+header {
+  display: flex;
+
+  background-color: white;
+}
+
+.dropdown {
+  position: relative;
+  padding: 1rem;
+
+  background-color: lightsalmon;
+}
+
+.dropdown .dropdown__list.show,
+.dropdown:hover .dropdown__list {
+  transform: scaleY(1);
+}
+
+.dropdown__list {
+  position: absolute;
+  padding: 1rem;
+
+  list-style: none;
+  background: beige;
+
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 300ms ease-in-out;
+}
