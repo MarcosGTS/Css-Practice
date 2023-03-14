@@ -9,12 +9,17 @@ function sliderFactory(sliderHtml) {
   const leftArrow = document.createElement('button');
   const rightArrow = document.createElement('button');
 
+  leftArrow.className = 'left-arrow';
+  rightArrow.classList = 'right-arrow';
+
+  arrowNav.className = 'image-slider__arrow-nav';
   arrowNav.appendChild(leftArrow);
   arrowNav.appendChild(rightArrow);
   sliderHtml.appendChild(arrowNav);
 
   slides.forEach(() => {
     const navDot = document.createElement('button');
+    navDot.classList.add('image-slider__dot');
     dotsNav.appendChild(navDot);
   });
 
