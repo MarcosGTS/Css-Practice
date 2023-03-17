@@ -1,0 +1,59 @@
+.container {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.form {
+  width: min(80%, 400px);
+  margin: 0 auto;
+  padding: 4rem 1rem;
+
+  background-color: #ddd;
+  border-radius: 1em;
+}
+
+.form__section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__section + .form__section {
+  margin-top: .5em;
+}
+
+.form__section label {
+  display: block;
+  width: 25%;
+
+  font-weight: bold;
+}
+
+.form .zip-code {
+  width: 8em;
+}
+
+.error {
+  opacity: 0;
+  
+  color: red;
+  font-style: italic;
+}
+
+.form__section .user-invalid + .error {
+  opacity: 1;
+}
+
+.form__section .valid {
+  border-color: green;
+}
+
+.form input,
+.form select,
+.form button {
+  padding: .4em;
+  
+  border: 2px solid #555;
+  border-radius: .3em;
+
+  font-size: inherit;
+}
