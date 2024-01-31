@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <form class="form-container">
+        <h1>Login</h1>
+        <div class="input-field">
+            <label for="">Email</label>
+            <input type="email" placeholder="example@mail.com">
+        </div>
+        <div class="input-field">
+            <label for="">Password</label>
+            <span>
+                <input id="password" type="password">
+                <button class="hidde-btn">i</button>
+            </span>
+            <a href="#">Forgot password</a>
+        </div>
+
+        <button class="fat-button">Login</button>
+        <p>Don't have an account? <a href="#">Signup</a></p>
+        <p class="division">Or</p>
+        <button class="fat-button">Login with Facebook</button>
+        <button class="fat-button">Login with Google</button>
+    </form>
+
+    <script>
+        const hiddeBtn = document.querySelector(".hidde-btn");
+        const password = document.querySelector("#password");
+
+        hiddeBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    password.type = (password.type == "password") ? "text": "password";
+                })
+
+    </script>
+</body>
+</html>
