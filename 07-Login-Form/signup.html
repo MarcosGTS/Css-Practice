@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f286b85dc7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form class="form-container">
+        <h1 class="form-title">Signup</h1>
+        <div class="input-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="example@mail.com">
+        </div>
+
+        <div class="input-field">
+            <label for="password">Password</label>
+            <input id="password" type="password">
+        </div>
+
+        <div class="input-field">
+            <label for="confirm-password">Confirm Password</label>
+            <span class="password-container">
+                <input id="confirm-password" type="password">
+                <button class="hidde-btn fa-solid fa-eye-slash"></button>
+            </span>
+        </div>
+
+
+        <button class="fat-button">Login</button>
+        <p>If you already has an account?<a href="./index.html">Login</a></p>
+        <p class="division">Or</p>
+        <button class="fat-button facebook-btn"><i class="fa-brands fa-facebook"></i>Login with Facebook</button>
+        <button class="fat-button google-btn"><i class="fa-brands fa-google"></i>Login with Google</button>
+    </form>
+
+    <script>
+        const hiddeBtn = document.querySelector(".hidde-btn");
+        const password = document.querySelector("#password");
+
+        hiddeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            password.type = (password.type == "password") ? "text": "password";
+
+            if (hiddeBtn.classList.contains("fa-eye-slash")) {
+                hiddeBtn.classList.remove("fa-eye-slash");
+                hiddeBtn.classList.add("fa-eye");
+            } else {
+                hiddeBtn.classList.remove("fa-eye");
+                hiddeBtn.classList.add("fa-eye-slash");
+            }
+
+        });
+
+    </script>
+</body>
+</html>
