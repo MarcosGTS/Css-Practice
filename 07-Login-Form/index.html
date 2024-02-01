@@ -6,28 +6,29 @@
 
     <title>Login</title>
     <link href="./style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f286b85dc7.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <form class="form-container">
-        <h1>Login</h1>
+        <h1 class="form-title">Login</h1>
         <div class="input-field">
-            <label for="">Email</label>
-            <input type="email" placeholder="example@mail.com">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="example@mail.com">
         </div>
         <div class="input-field">
-            <label for="">Password</label>
-            <span>
+            <label for="password">Password</label>
+            <span class="password-container">
                 <input id="password" type="password">
-                <button class="hidde-btn">i</button>
+                <button class="hidde-btn fa-solid fa-eye-slash"></button>
             </span>
             <a href="#">Forgot password</a>
         </div>
 
         <button class="fat-button">Login</button>
-        <p>Don't have an account? <a href="#">Signup</a></p>
+        <p>Don't have an account? <a href="./signup.html">Signup</a></p>
         <p class="division">Or</p>
-        <button class="fat-button">Login with Facebook</button>
-        <button class="fat-button">Login with Google</button>
+        <button class="fat-button facebook-btn"><i class="fa-brands fa-facebook"></i>Login with Facebook</button>
+        <button class="fat-button google-btn"><i class="fa-brands fa-google"></i>Login with Google</button>
     </form>
 
     <script>
@@ -35,9 +36,18 @@
         const password = document.querySelector("#password");
 
         hiddeBtn.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    password.type = (password.type == "password") ? "text": "password";
-                })
+            e.preventDefault();
+            password.type = (password.type == "password") ? "text": "password";
+
+            if (hiddeBtn.classList.contains("fa-eye-slash")) {
+                hiddeBtn.classList.remove("fa-eye-slash");
+                hiddeBtn.classList.add("fa-eye");
+            } else {
+                hiddeBtn.classList.remove("fa-eye");
+                hiddeBtn.classList.add("fa-eye-slash");
+            }
+
+        });
 
     </script>
 </body>

@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif; 
+    --blue: #4285F4;
+    --red: #DB4437;
 }
 
 body {
@@ -12,7 +16,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: blue;
+    background: #3a86ff; 
     min-height: 100vh;
 }
 
@@ -22,12 +26,19 @@ body {
     background-color: white;
     
     border-radius: 16px;
-    padding: 32px;
+    padding: 40px;
 
     font-size: 1.2rem;
+
+    box-shadow: 0 0 16px black;
 }
 
-.form-container a {
+.form-title {
+    text-align: center;
+}
+
+.form-container a,
+.form-container p {
     text-align: center;
 }
 
@@ -36,20 +47,45 @@ body {
     flex-direction: column;
 }
 
+.fat-button {
+    font-weight: bold;
+    border: 1px gray solid;
+    border-radius: 4px;
+    padding: 16px;
+
+    transition: 100ms linear;
+}
+
+.fat-button:hover {
+    letter-spacing: 1px;
+}
+
+.fat-button:active {
+    transform: scale(0.95);
+}
+
+.fat-button:nth-last-child(1) {
+    margin-bottom: 0;
+}
+
 .input-field input,
 .fat-button {
     font-size: 1.2rem;
     padding: 4px 8px;
 }
 
+.fat-button {
+    padding: 8px 16px;
+}
+
 .input-field,
 .fat-button {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .input-field label {
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .division {
@@ -85,10 +121,53 @@ body {
     right: 0;
 }
 
-.input-field span {
+.password-container {
     display: flex;
+    flex-direction: row;
 }
 
-.hidde-btn {
-   height: 100%;
+.input-field input, 
+.password-container input,
+.password-container button {
+    border: gray solid 1px;
+    border-radius: 4px;
+
+    background-color: white;
 }
+
+.password-container input {
+    width: 90%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.password-container button {
+    flex: auto;
+    min-width: 40px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+}
+
+.facebook-btn ,
+.google-btn {
+    text-align: left;
+}
+
+.facebook-btn i,
+.google-btn i{
+    display: inline-block;
+    margin-right: 10%;
+}
+
+.google-btn {
+    background-color: var(--red);
+    color: white;
+}
+
+.facebook-btn {
+    background-color: var(--blue);
+    color: white;
+}
+
